@@ -1,0 +1,77 @@
+
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+
+.App {
+  font-family: PT Sans, sans-serif;
+  text-align: center;
+}
+
+.App-header {
+  background-color: #193041;
+  height: 80px;
+  padding: 20px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.App-title {
+  font-size: 2em;
+}
+
+.render {
+  margin:auto;
+  margin-bottom: 50px;
+}
+
+.trialsContainer {
+  background-color: #f7f3fd;
+  height: 320px;
+  position: relative;
+}
+
+.trial {
+  background-color: #E1F0EE;
+  padding: 5px;
+  color: #524268;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  position: absolute;
+  transition: background-color 0.2s linear
+}
+
+.trial:hover {
+  background-color: #b9d4d1;
+}
+
+.trial .dates {
+  font-style: italic;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 12px;
+  visibility: hidden;
+}
+
+.trial:hover .dates {
+  visibility: visible;
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background-color: #b9d4d1;
+}
+.timeline div{
+  position: absolute;
+  width: 1px;
+  height: 12px;
+  background-color: #b9d4d1;
+}
+.timeline p{
+  position: absolute;
+  top: 5px;
+  transform: rotate(-45deg);
+  color: #b9d4d1;
+}
