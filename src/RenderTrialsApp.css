@@ -1,12 +1,12 @@
 
 @import url(https://fonts.googleapis.com/css?family=PT+Sans);
 
-.App {
+.RenderTrialsApp {
   font-family: PT Sans, sans-serif;
   text-align: center;
 }
 
-.App-header {
+.header {
   background-color: #193041;
   height: 80px;
   padding: 20px;
@@ -14,7 +14,7 @@
   margin-bottom: 30px;
 }
 
-.App-title {
+.title {
   font-size: 2em;
 }
 
@@ -50,11 +50,11 @@
   bottom: 5px;
   right: 10px;
   font-size: 12px;
-  visibility: hidden;
+  opacity: 0.3;
 }
 
 .trial:hover .dates {
-  visibility: visible;
+  opacity: 1;
 }
 
 .timeline {
@@ -63,12 +63,14 @@
   height: 3px;
   background-color: #b9d4d1;
 }
+
 .timeline div{
   position: absolute;
   width: 1px;
   height: 12px;
   background-color: #b9d4d1;
 }
+
 .timeline p{
   position: absolute;
   top: 5px;
