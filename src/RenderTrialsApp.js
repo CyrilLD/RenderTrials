@@ -12,22 +12,6 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import './RenderTrialsApp.css';
 
-const trials = [
-  { start: 5, end: 50, title: 'Study of Bendamustine' },
-  { start: 55, end: 85, title: 'ASCT With Nivolumab' },
-  { start: 70, end: 100, title: 'Study of Stockolm' },
-  { start: 90, end: 115, title: 'Bortezomib' }
-  /* Longer list with more levels for testing
-  { start: 5, end: 18, title: 'First one' },
-  { start: 28, end: 46, title: 'Study of Bendamustine1' },
-  { start: 21, end: 100, title: 'A long one' },
-  { start: 20, end: 49, title: 'Another one' },
-  { start: 55, end: 85, title: 'ASCT With Nivolumab' },
-  { start: 75, end: 100, title: 'Study of Stockolm' },
-  { start: 70, end: 110, title: 'The new drug study' },
-  { start: 90, end: 115, title: 'Bortezomib' } */
-];
-
 /**
  * Update the timeline
  * @param { Array } props.trials
@@ -169,16 +153,41 @@ function RenderClinicalTrials(props) {
  * Main class of the React application.
  */
 class RenderTrialsApp extends Component {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      trials: [
+        { start: 5, end: 50, title: 'Study of Bendamustine' },
+        { start: 55, end: 85, title: 'ASCT With Nivolumab' },
+        { start: 70, end: 100, title: 'Study of Stockolm' },
+        { start: 90, end: 115, title: 'Bortezomib' },
+        /* Longer list with more levels for testing
+          { start: 5, end: 18, title: 'First one' },
+          { start: 28, end: 46, title: 'Study of Bendamustine1' },
+          { start: 21, end: 100, title: 'A long one' },
+          { start: 20, end: 49, title: 'Another one' },
+          { start: 55, end: 85, title: 'ASCT With Nivolumab' },
+          { start: 75, end: 100, title: 'Study of Stockolm' },
+          { start: 70, end: 110, title: 'The new drug study' },
+          { start: 90, end: 115, title: 'Bortezomib' } */
+      ],
+    };
+    // Expose renderClinicalTrials function
+    window.renderClinicalTrials = (trials) => {
+      this.setState({ trials });
+    };
+  };
+  
   render() {
     return (
       <div className="RenderTrialsApp">
         <header className="header">
           <h1 className="title">Render clinical trials</h1>
         </header>
-        <RenderClinicalTrials trials={trials} />
+        <RenderClinicalTrials trials={this.state.trials} />
       </div>
     );
-  }
+  };
 }
 
 export default RenderTrialsApp;
